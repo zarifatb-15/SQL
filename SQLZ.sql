@@ -1,0 +1,11 @@
+CREATE DATABASE Market
+CREATE TABLE Products(
+Id INT,
+[Name] NVARCHAR(20),
+Price DECIMAL (15,2)
+);
+
+
+USE main;
+ALTER TABLE Products
+ADD Brand NVARCHAR (20) 
