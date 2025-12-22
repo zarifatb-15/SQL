@@ -1,0 +1,20 @@
+--ddl
+--create alter drop truncate
+CREATE DATABASE PA401
+DROP DATABASE PA401
+USE PA401
+DROP DATABASE PA401
+USE Master
+ALTER DATABASE PA401 SET SINGLE_USER WITH ROLLBACK IMMEDIATE
+DROP DATABASE PA401
+CREATE TABLE Students
+(
+Id INT,
+[Name] NVARCHAR(20),
+Age INT
+) 
+USE PA401
+DROP TABLE Students
+EXEC sp_rename 'Students','Student'
+EXEC sp_rename 'Student','Students'
+EXEC sp_rename 'Students.Name','Ad'
