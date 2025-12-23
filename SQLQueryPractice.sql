@@ -18,3 +18,23 @@ DROP TABLE Students
 EXEC sp_rename 'Students','Student'
 EXEC sp_rename 'Student','Students'
 EXEC sp_rename 'Students.Name','Ad'
+EXEC sp_rename 'Students.Name','Name'
+USE PA401
+EXEC sp_rename 'Students.Ad','Name'
+--dql
+SELECT*FROM Students
+SELECT * FROM Students WHERE Id=3
+SELECT*FROM Students WHERE [Name]='Zarifa'
+SELECT*FROM Students WHERE Age>18
+SELECT*FROM Students WHERE Id BETWEEN 1 AND 2
+SELECT *FROM Students WHERE Id IN (1)
+SELECT*FROM Students WHERE Id=4 OR [Name]='Zara'
+SELECT*FROM Students WHERE [Name] LIKE '%Z%'
+SELECT*FROM Students WHERE [Name] LIKE '%AV%'
+SELECT *FROM Students WHERE Age LIKE '%5%'
+SELECT Id FROM Students
+SELECT Id StudentId FROM Students
+SELECT Id ClassID, Age FROM Students
+SELECT Id studentid, [Name] studentname, Age studentage FROM Students
+
+
