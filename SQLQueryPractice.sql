@@ -48,3 +48,46 @@ VALUES (1,'Zarifa', 25)
 INSERT INTO Students(Id,[Name],Age)
 VALUES(4, 'Aytan',27)
 DELETE FROM Students WHERE Id=4
+
+--sql constraints
+DROP TABLE Students
+CREATE TABLE Students
+(
+    Id INT PRIMARY KEY IDENTITY,
+    [Name] NVARCHAR (20) NOT NULL,
+    Age INT CHECK (Age>18),
+    Surname NVARCHAR (50) DEFAULT('----'),
+    IsMarried BIT,
+    GraduateDate DATETIME2,
+    Point DECIMAL (10,2)
+)
+SELECT *FROM Students
+INSERT INTO Students (Name, Age, Surname, IsMarried, GraduateDate, Point)
+VALUES
+(N'Kamran', 23, N'Həsənov', 0, '2022-06-10', 85.40),
+(N'Ləman', 21, N'Quliyeva', 0, '2024-06-20', 92.10),
+(N'Orxan', 28, N'Rzayev', 1, '2020-05-30', 76.80);
+
+DROP TABLE IF EXISTS Students;
+GO
+
+CREATE TABLE Students
+(
+    Id INT PRIMARY KEY IDENTITY,
+    [Name] NVARCHAR(20) NOT NULL,
+    Age INT CHECK (Age > 18),
+    Surname NVARCHAR(50) DEFAULT('----'),
+    IsMarried BIT,
+    GraduateDate DATETIME2,
+    Point DECIMAL(10,2)
+);
+GO
+
+INSERT INTO Students (Name, Age, Surname, IsMarried, GraduateDate, Point)
+VALUES
+(N'Kamran', 23, N'Həsənov', 0, '2022-06-10', 85.40),
+(N'Ləman', 21, N'Quliyeva', 0, '2024-06-20', 92.10),
+(N'Orxan', 28, N'Rzayev', 1, '2020-05-30', 76.80);
+DROP TABLE IF EXISTS Students;
+
+
