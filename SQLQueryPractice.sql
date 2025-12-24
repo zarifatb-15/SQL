@@ -21,7 +21,8 @@ EXEC sp_rename 'Students.Name','Ad'
 EXEC sp_rename 'Students.Name','Name'
 USE PA401
 EXEC sp_rename 'Students.Ad','Name'
---dql
+--dml
+--insert/delete/update/      --dql /selecet
 SELECT*FROM Students
 SELECT * FROM Students WHERE Id=3
 SELECT*FROM Students WHERE [Name]='Zarifa'
@@ -36,5 +37,14 @@ SELECT Id FROM Students
 SELECT Id StudentId FROM Students
 SELECT Id ClassID, Age FROM Students
 SELECT Id studentid, [Name] studentname, Age studentage FROM Students
+use PA401
 
-
+DELETE FROM Students WHERE [Name] LIKE 'Z%'
+SELECT *FROM Students
+UPDATE Students SET [Name]='Ayel' WHERE Id=2
+UPDATE Students SET [Name]='Aysel' WHERE Id=2
+INSERT INTO Students (Id,[Name],Age)
+VALUES (1,'Zarifa', 25)
+INSERT INTO Students(Id,[Name],Age)
+VALUES(4, 'Aytan',27)
+DELETE FROM Students WHERE Id=4
