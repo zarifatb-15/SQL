@@ -1,0 +1,31 @@
+CREATE DATABASE DemoAppp
+USE DemoAppp
+
+CREATE TABLE  Countries(
+Id INT PRIMARY KEY IDENTITY,
+[Name] NVARCHAR(30) NOT NULL,
+Area DECIMAL (10,2) NOT NULL
+)
+
+CREATE TABLE Cities(
+Id INT PRIMARY KEY IDENTITY,
+[Name] NVARCHAR(30) NOT NULL,
+Area DECIMAL (10,2) NOT NULL,
+CountryId INT NOT NULL,
+FOREIGN KEY (CountryId) REFERENCES Countries(Id)
+)
+
+CREATE TABLE People (
+    Id INT IDENTITY PRIMARY KEY,
+    Name NVARCHAR(50),
+    Surname NVARCHAR(50),
+    PhoneNumber NVARCHAR(20),
+    Email NVARCHAR(100),
+    Age INT,
+    Gender NVARCHAR(10),
+    HasCitizenship BIT,
+    CountryId INT,
+    CityId INT,
+	FOREIGN KEY (CountryId) REFERENCES Countries(Id),
+	FOREIGN KEY (CityId) REFERENCES Cities(Id)
+)
